@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>To-Do Description</h1>
+<div>
+    {{object.title}}: {{object.description}} ... {{object.due_date|date:"dd-mm-YY"}}
+</div>
+
+<p><a href="{% url 'edit' object.pk %}">+ Edit To-Do</a></p>
+<p></p><a href="{% url 'delete' object.pk %}">+ Delete To-Do</a></p>
+{% endblock content %}
